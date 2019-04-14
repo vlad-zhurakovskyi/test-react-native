@@ -19,14 +19,6 @@ export default class HelloWorldApp extends Component {
     });
   }
 
-
-  // getMatchesJokes(text) {
-  //   fetch(`https://api.chucknorris.io/jokes/search?query=${text}`).then(res => {
-  //     res.json().then(data => console.log(data.result[0].value))
-  //   });
-  // };
-
-
   getCategoriesJokes(category) {
     fetch(`https://api.chucknorris.io/jokes/random?category=${category}`).then(res=>{
       res.json().then(data => this.setState({jokes: data}))
@@ -41,7 +33,7 @@ export default class HelloWorldApp extends Component {
   };
 
   render() {
-    const {categories, jokes, result} = this.state;
+    const {categories, jokes} = this.state;
 
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
